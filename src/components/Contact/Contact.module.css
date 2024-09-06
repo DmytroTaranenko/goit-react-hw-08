@@ -1,0 +1,37 @@
+p {
+  margin: 0;
+}
+
+.contactWrapper {
+  margin-right: 30px;
+}
+
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.contactDetails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.contactIcon {
+  margin-right: 20px;
+}
+
+.contactTitle{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 165px;
+}
