@@ -1,0 +1,22 @@
+.active {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: red;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 12px;
+    border: 1px;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .link {
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .userMenuWrap{
+
+  }

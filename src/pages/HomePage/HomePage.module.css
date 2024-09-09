@@ -1,0 +1,37 @@
+.homePageBox {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.4), rgba(46, 47, 66, 0.4)),url('https://img.freepik.com/premium-photo/growing-tree-digital-plant-pot-eco-technology-technology-convergence-concepts-green-computing-green-technology-green-it-it-ethics_76964-44026.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: calc(100vh - 190px);}
+
+.homePageTitle {
+    max-width: 500px;
+    margin-left: 150px;
+    text-align: center;
+    padding-top: 30px;
+}
+.homePageParagraph {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.homePageLinkContacts {
+  margin-top: 30px;
+  margin-left: 245px;
+  font-size: 30px;
+  padding: 15px;
+color:#ffffff
+}
+
+.homePageLink {
+  font-size: 25px;
+  padding: 35px;
+  color: white;
+}
+
+.navLinkWrap {
+    margin-left: 230px;
+
+}

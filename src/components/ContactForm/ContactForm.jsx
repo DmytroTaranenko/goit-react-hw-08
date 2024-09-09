@@ -4,7 +4,8 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
+
 
 const INITIAL_VALUES = {
   userName: "",
@@ -19,7 +20,7 @@ const ProfileValidationSchema = Yup.object().shape({
     .min(3, "Too short")
     .max(50, "Too long"),
   userNumber: Yup.string()
-    .matches(phoneRegExp, "Number should to use this format 'xxx-xxx-xx'")
+    .matches(phoneRegExp, "Number should to use this format 'xxx-xxx-xxxx'")
     .required("Number is required"),
 });
 

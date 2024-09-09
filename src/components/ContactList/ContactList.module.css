@@ -1,4 +1,4 @@
-.contactList {
+/* .contactList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(412px,1fr));
   gap: 10px;
@@ -6,3 +6,10 @@
   width: 100%;
   margin: 0 auto;
 }
+       */
+.contactList {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+}
+      

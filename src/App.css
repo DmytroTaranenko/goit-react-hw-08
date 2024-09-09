@@ -1,11 +1,12 @@
 #root {
   margin: 0 auto;
-  padding: 50px;
+  padding: 20px;
 }
 
 ul,
 li {
   list-style-type: none;
+  padding: 0;
 }
 
 .logo {
