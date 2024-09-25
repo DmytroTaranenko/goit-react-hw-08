@@ -1,7 +1,7 @@
 import { FaUserLarge, FaPhone } from "react-icons/fa6";
 import css from "./Contact.module.css";
 
-const Contact = ({ contact, onDeleteContact }) => {
+const Contact = ({ contact, onDeleteContact, onUpdateContact }) => {
   return (
     <li className={css.contactItem}>
       <div className={css.contactWrapper}>
@@ -21,6 +21,13 @@ const Contact = ({ contact, onDeleteContact }) => {
         type="button"
       >
         Delete
+      </button>
+      <button
+        onClick={() => onUpdateContact(contact.id)}
+        className={css.contactBtnUpdate}
+        type="button"
+      >
+        Update contact
       </button>
     </li>
   );

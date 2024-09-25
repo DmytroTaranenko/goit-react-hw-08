@@ -1,38 +1,38 @@
-import { ErrorMessage, Formik, Form, Field } from "formik";
-import * as Yup from "yup";
+import { ErrorMessage, Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 
-import css from "./ContactForm.module.css";
-import { nanoid } from "nanoid";
-import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contacts/operations";
-
+import css from './ContactForm.module.css';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contacts/operations';
+import toast from 'react-hot-toast';
 
 const INITIAL_VALUES = {
-  userName: "",
-  userNumber: "",
+  userName: '',
+  userNumber: '',
 };
 
 const phoneRegExp = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
 
 const ProfileValidationSchema = Yup.object().shape({
   userName: Yup.string()
-    .required("Name is required")
-    .min(3, "Too short")
-    .max(50, "Too long"),
+    .required('Name is required')
+    .min(3, 'Too short')
+    .max(50, 'Too long'),
   userNumber: Yup.string()
     .matches(phoneRegExp, "Number should to use this format 'xxx-xxx-xxxx'")
-    .required("Number is required"),
+    .required('Number is required'),
 });
 
 const ContactForm = () => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-    const onAddUserContact = (contact) => {
-      const thunk = addContact(contact)
-
-      dispatch(thunk);
-    };
+  const onAddUserContact = (contact) => {
+    dispatch(addContact(contact))
+      .unwrap()
+      .then(() => {
+        toast.success('Contact added successfully🎉');
+      });
+  };
   const handleSubmit = (values, actions) => {
     const contactObject = {
       name: values.userName,
@@ -76,8 +76,8 @@ const ContactForm = () => {
             className={css.errorText}
             name="userNumber"
             component="span"
-            />
-            </label>
+          />
+        </label>
         <button type="submit">Add contact</button>
       </Form>
     </Formik>

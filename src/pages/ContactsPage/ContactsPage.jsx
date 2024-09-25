@@ -5,25 +5,36 @@ import ContactForm from '../../components/ContactForm/ContactForm';
 import ContactList from '../../components/ContactList/ContactList';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import { selectContacts } from '../../redux/contacts/selectors';
-import css from "./ContactsPage.module.css"
-
+import css from './ContactsPage.module.css';
+import toast from 'react-hot-toast';
 
 
 const ContactsPage = () => {
   const userContacts = useSelector(selectContacts);
-  console.log('userContacts: ', userContacts);
   const dispatch = useDispatch();
 
+  console.log('userContacts: ', userContacts);
+
+
+
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchContacts()).unwrap().then(() => {
+      toast.success("Contact loaded successfully🎉");
+    });
+;
   }, [dispatch]);
 
   return (
     <div>
       <ContactForm />
       <SearchBox />
-      {userContacts.length === 0 ? <p className={css.contactsMessage} >Sorry, you don't have any contact yet</p> :       <ContactList />
-      }
+      {userContacts.length === 0 ? (
+        <p className={css.contactsMessage}>
+          Sorry, you don't have any contact yet
+        </p>
+      ) : (
+        <ContactList />
+      )}
     </div>
   );
 };
